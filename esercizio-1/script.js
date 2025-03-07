@@ -22,35 +22,51 @@ const bikes = [
         'bikeWeight': 8
     }
 ]
+//debug
+console.log(bikes);
 
-//creazione array dei pesi per fare il confronto
-const weights = [];
+let lighterBike = bikes[0];
 
-//ciclo per scorrere gli array (oggetti)
-for (let i = 0; i < bikes.length; i++) {
+for (let i = 1; i < bikes.length; i++) {
 
-    //debug: stampa l'oggetto
-    console.log(bikes[i]);
-    // pusho il peso delle bici nel nuovo array
-    weights.push(bikes[i].bikeWeight);
-}
-//debug: stampa l'array
-console.log(weights);
-
-//trovo il valore più basso nell'array
-const minweight = Math.min(...weights);
-
-//ciclo per scorrere gli array (oggetti)
-for (let i = 0; i < bikes.length; i++) {
-
-    if( minweight===bikes[i].bikeWeight){
-
-        //debug: stampa l'oggetto che ha il peso più basso
-        console.log(bikes[i]);
-
-        message.innerText = `la bici più leggera di tutte è: la "${bikes[i].bikeName}"!
-        Con un peso minimo di ± ${bikes[i].bikeWeight}kg`;
-
+    if (bikes[i].bikeWeight < lighterBike.bikeWeight) {
+        lighterBike = bikes[i];
     }
-
 }
+console.log(lighterBike);
+message.innerText = `la bici più leggera di tutte è: la "${lighterBike.bikeName}"!
+Con un peso minimo di ± ${lighterBike.bikeWeight}kg`;
+
+
+//soluzione verbosissima:
+// //creazione array dei pesi per fare il confronto
+// const weights = [];
+
+// //ciclo per scorrere gli array (oggetti)
+// for (let i = 0; i < bikes.length; i++) {
+
+//     //debug: stampa l'oggetto
+//     console.log(bikes[i]);
+//     // pusho il peso delle bici nel nuovo array
+//     weights.push(bikes[i].bikeWeight);
+// }
+// //debug: stampa l'array
+// console.log(weights);
+
+// //trovo il valore più basso nell'array
+// const minweight = Math.min(...weights);
+
+// //ciclo per scorrere gli array (oggetti)
+// for (let i = 0; i < bikes.length; i++) {
+
+//     if( minweight===bikes[i].bikeWeight){
+
+//         //debug: stampa l'oggetto che ha il peso più basso
+//         console.log(bikes[i]);
+
+//         message.innerText = `la bici più leggera di tutte è: la "${bikes[i].bikeName}"!
+//         Con un peso minimo di ± ${bikes[i].bikeWeight}kg`;
+
+//     }
+
+// }
