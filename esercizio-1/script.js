@@ -24,7 +24,7 @@ const bikes = [
 ]
 
 //creazione array dei pesi per fare il confronto
-const weights = []
+const weights = [];
 
 //ciclo per scorrere gli array (oggetti)
 for (let i = 0; i < bikes.length; i++) {
