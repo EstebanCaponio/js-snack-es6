@@ -1,4 +1,3 @@
-
 const teams = [
     {
         'teamName': 'italia',
@@ -36,3 +35,16 @@ const teams = [
         'foulsSuffered': 0
     }
 ]
+
+// per ogni oggetto nell'array genera un punteggio ed un numero di falli subiti random
+for(let i=0; i<teams.length; i++){
+    teams[i].points=randomValue();
+    teams[i].foulsSuffered=randomValue();
+}
+
+console.log(teams);
+
+// funzione per punti e falli random
+function randomValue() {
+    return Math.floor(Math.random() * 20) + 1;
+  }
