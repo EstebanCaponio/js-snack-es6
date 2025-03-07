@@ -41,9 +41,19 @@ for(let i=0; i<teams.length; i++){
     teams[i].points=randomValue();
     teams[i].foulsSuffered=randomValue();
 }
-
+// debug
 console.log(teams);
 
+// creazione nuovo array con solo nome squadra e falli
+const teamsSufferedFouls = teams.map(function(teams) {
+    return {
+        teamName: teams.teamName,
+        foulsSuffered: teams.foulsSuffered
+    };
+  });
+
+
+console.log(teamsSufferedFouls);
 // funzione per punti e falli random
 function randomValue() {
     return Math.floor(Math.random() * 20) + 1;
